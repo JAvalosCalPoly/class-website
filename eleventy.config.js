@@ -27,18 +27,26 @@ export default async function(eleventyConfig) {
 	});
 
 	eleventyConfig.addCollection("blog", function(collectionApi) {
-		return collectionApi.getAllSorted().filter(
-			function (item) { return item.data.type == "blog" }
-		);
+		return collectionApi.getAllSorted().filter(item => item.data.type === "blog");
+	});
+
+	eleventyConfig.addCollection("assignments", function (collectionApi) {
+		return collectionApi.getAllSorted().filter(item => item.data.type === "assignment");
+	});
+
+	eleventyConfig.addCollection("notes", function (collectionApi) {
+		return collectionApi.getAllSorted().filter(item => item.data.type === "notes");
 	});
 
 	eleventyConfig.addFilter("filterByClass", function(collection, courseNumber, term) {
 		return collection.filter(item => {
-			return item.data.courseNumber === courseNumber &&
-					item.data.term === term &&
-					item.data.type === "blog";
+			return item.data.courseNumber === courseNumber && item.data.term === term;
 		});
 	});
+
+	eleventyConfig.addFilter("sortBy", (arr, key) =>
+		[...arr].sort((a, b) => (a.data[key] ?? 0) - (b.data[key] ?? 0))
+	);
 
 	eleventyConfig.addFilter("isNonempty", function(collection) {
 		return collection.length > 0;
@@ -61,7 +69,7 @@ export default async function(eleventyConfig) {
 		.addPassthroughCopy("./content/assets/favicon.svg")
 		.addPassthroughCopy({ "node_modules/@mathjax": "vendor/mathjax" })
 		.addPassthroughCopy({"content/assets/_global": "assets"})
-		.addPassthroughCopy("./css/index-2026-09-08.css")
+		.addPassthroughCopy("./css/index-2026-10-09.css")
 		.addPassthroughCopy({"node_modules/prismjs/themes/prism.min.css": "css/prism.css"})
 	;
 	eleventyConfig.addWatchTarget("css/**/*.css");

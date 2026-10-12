@@ -8,25 +8,28 @@ courseTitle: Introduction to Mathematical Typesetting
 <h1 style="margin:0;">{{ courseNumber }}</h1>
 <h4 style="margin:0;">{{ courseTitle }} ({{ term }})</h4>
 
-<h2>Notes</h2>
-<ul>
-{% for post in collections.all | reverse %}{% if (post.data.courseNumber == courseNumber) and (post.data.term == term) and (post.data.type == "notes") %}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-  </li>
-{% endif %}{% endfor %}
-</ul>
-
 <h2>Assignments</h2>
-<ul>
-{% for post in collections.all | reverse %}{% if (post.data.courseNumber == courseNumber) and (post.data.term == term) and (post.data.type == "assignment") %}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-  </li>
-{% endif %}{% endfor %}
-</ul>
+<div class="three-column grid by-columns">
+{% for post in collections.assignments | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
+  <a href="{{ post.url }}" class="hw-list-item">
+    <div>
+      <div class="hw-link">
+        HW {{ post.data.number }}
+      </div>
+      <div>
+        ({{ post.data.date | dueDate }})
+      </div>
+    </div>
+  </a>
+{% endfor %}
+</div>
 
-<h3 style="margin-bottom:0;">Other pages</h3>
-<ul style="margin-top:0;">
-  <li><a href="/LaTeX_tips/">\( \LaTeX \) tips</a></li>
+<h2>Notes</h2>
+<ul class="link-list">
+{% for post in collections.notes | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
+  <li><a href="{{ post.url }}">
+  {% if post.data.week %}<span class="week">{{ post.data.week }}</span>{% endif %}
+  {{ post.data.title }}
+</a></li>
+{% endfor %}
 </ul>

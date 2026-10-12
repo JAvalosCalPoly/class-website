@@ -10,7 +10,7 @@ courseTitle: Introduction to Abstract Algebra I
 
 <h2>Assignments</h2>
 <div class="three-column grid by-columns">
-{% for post in collections.all | reverse %}{% if (post.data.courseNumber == courseNumber) and (post.data.term == term) and (post.data.type == "assignment") %}
+{% for post in collections.assignments | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
   <a href="{{ post.url }}" class="hw-list-item">
     <div>
       <div class="hw-link">
@@ -21,21 +21,23 @@ courseTitle: Introduction to Abstract Algebra I
       </div>
     </div>
   </a>
-{% endif %}{% endfor %}
+{% endfor %}
 </div>
 
 <h2>Notes</h2>
-<ul>
-{% for post in collections.all | reverse %}{% if (post.data.courseNumber == courseNumber) and (post.data.term == term) and (post.data.type == "notes") %}
-  <li>
-    <a href="{{ post.url }}">Week {{ post.data.week }} ({{ post.data.day }})</a>
-  </li>
-{% endif %}{% endfor %}
+<ul class="link-list">
+{% for post in collections.notes | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
+  <li><a href="{{ post.url }}">
+  {% if post.data.week is defined %}<span class="week">{{ post.data.week }}{{ post.data.day[0] + post.data.day[1] }}</span>{% endif %}
+  {{ post.data.title }}
+</a></li>
+{% endfor %}
 </ul>
+
 
 <h3 style="margin-bottom:0;">Other pages</h3>
 <ul style="margin-top:0;">
-  <li><a href="/LaTeX_tips/">\( \LaTeX \) tips</a></li>
   <li><a href="/F26/MAT4170/proofs_portfolio/">Proofs portfolio instructions</a></li>
+  <li><a href="/LaTeX_tips/">\( \LaTeX \) tips</a></li>
 </ul>
 </div>

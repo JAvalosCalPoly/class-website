@@ -20,10 +20,8 @@ courseTitle: Putnam Preparation
 
 <h2>Weekly notes</h2>
 <ul>
-{% for post in collections.all | reverse %}
-  {% if (post.data.courseNumber == courseNumber) and (post.data.term == term) and (post.data.type == "notes") %}
+{% for post in collections.notes | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
   <li><a href="{{ post.url }}">Week {{ post.data.week }}: {{post.data.title}}</a></li>
-  {% endif %}
 {% endfor %}
 </ul>
 </div>
