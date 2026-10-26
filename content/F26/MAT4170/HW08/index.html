@@ -4,15 +4,18 @@ type: assignment
 number: 8
 courseNumber: MAT4170
 term: F26
-date: 2026-10-29
+date: 2026-10-30
 layout: layouts/hw.njk
-eleventyExcludeFromCollections: true
 ---
 <br>
 <h2>Goals</h2>
 <ul>
   <li>Complete your <a href=https://en.wiktionary.org/wiki/ultimate>ultimate</a> homework assignment.</li>
-  <li>[...]</li>
+  <li>Reflect on your favorite exercises throughout the term</li>
+  <li>Practice with rings and (finite) fields</li>
+  <li>Finite fields in linear algebra</li>
+  <li>See an example of a ring that doesn't involve numbers</li>
+  <li>Do your (mid-term) "exit interview"</li>
 </ul>
 <!-- <h2>Change log</h2>
 <ul>
@@ -30,15 +33,15 @@ eleventyExcludeFromCollections: true
 
 <details>
   <summary>
-    Exercise 2 [2]
-    <span style="font-size: small;">(Favorite problems?)</span>
+    Exercise 2 [3]
+    <span style="font-size: small;">(Favorite exercises)</span>
   </summary>
   <p style="font-style: italic;">
-    The next time I teach this class, my students will really like getting to hear from you! Choose a (favorite?) problem that you did on the homework this term, and write a sentence or two to future students about it.
+    The next time I teach this class, my students will really like getting to hear from you! Choose a (favorite?) exercise that you did on the homework this term, and write a sentence or two to future students about it.
   </p>
   <p>
-    Post on the <code>#hw-prompts</code> Discord using the following format, but only include the star if you're talking about your <i>favorite</i> problem from the term. (Obviously, change the problem and the message.)
-    <pre><code>**HW 2, Choice Exercise 6.** ⭐️ This was my favorite problem of the term because I was really struggling with how to think about cycle notation, and everything clicked with this one.</code></pre>
+    Post on the <code>#hw-prompts</code> Discord using the following format, but only include the star if you're talking about your <i>favorite</i> exercise from the term. (Obviously, change the exercise and the message.)
+    <pre><code>**HW 2, Choice Exercise 6.** ⭐️ This was my favorite exercise of the term because I was really struggling with how to think about cycle notation, and everything clicked with this one.</code></pre>
   </p>
   <p>
     Here are some examples of what you might say:
@@ -65,21 +68,37 @@ eleventyExcludeFromCollections: true
 <details>
   <summary>
     Exercise 3 [5]
-    <span style="font-size: small;">(Student HW + Proofs portfolio - TODO)</span>
+    <span style="font-size: small;">(Group project assignment + proofs portfolio)</span>
   </summary>
   <p style="font-style: italic;">
-    Next week is Exam 2. The week after that you have two drafts due:
-    an initial draft of your student-authored homework is due on Thursday, November 12th, and
-    the final draft of your proofs portfolio is due on Friday, November 13th.
+    Following this assignment, you will have (take-home) Exam 2, which will be available from Friday 10/30 until Friday 11/6. The following week, you will have two drafts due:
+    an initial draft of your student-authored homework is due on Thursday, 11/12, and
+    the final draft of your proofs portfolio is due on Friday, 11/13.
   </p>
+  <ol>
+    <li>
+      Spend 15 minutes looking at the <a href="/F26/MAT4170/group_assignment">Group project (assignment)</a> guidelines. Start thinking about who you might like to have in your group, and consider some of the project ideas from the end of the document. You're welcome to use any of those ideas, but you are also encouraged to come up with your own idea!
+    </li>
+    <li>
+      Spend at least 30 minutes working on your <a href="/F26/MAT4170/proofs_portfolio">proofs portfolio</a>, making sure to take into consideration any feedback you have received on previous homework assignments. (At this point, your portfolio should be at least three full pages with no <code>\newpage</code> commands.)
+    </li>
+  </ol>
 </details>
 
 <h2>Required Exercises</h2>
 <details>
   <summary>
-    Exercise 4 [?]
-    <span style="font-size: small;"></span>
+    Exercise 4 [9]
+    <span style="font-size: small;">(Rings and fields)</span>
   </summary>
+  <ol>
+    <li>
+      {% include 'content/F26/MAT4170/HW08/exercises/mod_prime_finite_field.html' %}
+    </li>
+    <li>
+      {% include 'content/F26/MAT4170/HW08/exercises/upper_triangular_matrices.html' %}
+    </li>
+  </ol>
 </details>
 
 <h2>Choice Exercises</h2>
@@ -89,28 +108,122 @@ eleventyExcludeFromCollections: true
 
 <details>
   <summary>
-    Choice Exercise 6 [≤2]
-    <span style="font-size: small;">(Quiz review - TODO)</span>
+    Choice Exercise 5 [15]
+    <span style="font-size: small;">(Ring fundamentals)</span>
   </summary>
-  {% include 'content/F26/MAT4170/HW06/exercises/quiz_review.html' %}
+  {% include 'content/F26/MAT4170/HW08/exercises/ring_fundamentals.html' %}
 </details>
 
 <details>
   <summary>
-    Choice Exercise 8 [≤8]
-    <span style="font-size: small;">(Fundamentals)</span>
+    Choice Exercise 6 [5+7]
+    <span style="font-size: small;">(Associativity and distributivity in \(\mathbb{R}^{n\times n}\) and \(\mathbb{C}\))</span>
   </summary>
   <ol>
-    <li></li>
+    <li>
+      {% include 'content/F26/MAT4170/HW08/exercises/matrix_distributivity.html' %}
+    </li>
+    <li>
+      Recall that in the ring of complex numbers \(\mathbb{C}, + , \times\), we define multiplication such that \[
+        (a_1 + b_1i) \times (a_2 + b_2i) = (a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i.
+      \]
+      <ol>
+        <li>[2]
+          Prove that complex multiplication is associative.
+        </li>
+        <li>[1]
+          Prove that complex multiplication is commutative.
+        </li>
+        <li>[2]
+          Prove that complex multiplication distributes over addition. (Explain why knowing that multiplication is commutative implies that you only need to check one direction.)
+        </li>
+        <li>[2]
+          Prove that nonzero complex numbers have multiplicative inverses by computing the multiplicative inverse of \(a + bi\).
+        </li>
+      </ol>
+    </li>
   </ol>
 </details>
 
 <details>
   <summary>
-    Choice Exercise # [≤4]
+    Choice Exercise 7 [7]
+    <span style="font-size: small;">(Vector spaces over a finite field)</span>
+  </summary>
+  <p>
+    It turns out that many (but not all) of the theorems that you learned about vector spaces over \(\mathbb{R}\) in linear algebra also work over finite fields.
+  </p>
+  <ol>
+    <li>
+      Let \(\mathbb{Z}_5^{3 \times 3}\) be the ring of \(3 \times 3\) matrices over the field \(\mathbb{Z}_5\). Compute the determinant \(\det(A) \in \mathbb{Z}_5\) where \[
+        A = \begin{pmatrix}
+          1 & 0 & 2 \\
+          2 & 1 & 0 \\
+          0 & 1 & 0
+        \end{pmatrix}.
+      \]
+    </li>
+    <li>
+      Because the determinant of \(A\) is nonzero, the matrix is invertible. Adapt the standard matrix inversion techniques to compute the inverse matrix \(A^{-1} \in \mathbb{Z}_5^{3 \times 3}\), which should have entries that are integers mod \(5\).
+    </li>
+    <li>
+      Compute \(\det(A^{-1})\) and show that \(\det(A^{-1}) = \det(A)^{-1}\), where the inverse is with respect to multiplication mod \(5\).
+    </li>
+  </ol>
+</details>
+
+<details>
+  <summary>
+    Choice Exercise 8 [6]
+    <span style="font-size: small;">(Endomorphism ring)</span>
+  </summary>
+  <p>
+    {% include 'content/F26/MAT4170/HW08/exercises/endomorphism_ring.html' %}
+  </p>
+</details>
+
+<details>
+  <summary>
+    Choice Exercise 9 [≤4]
     <span style="font-size: small;">(Exit interview)</span>
   </summary>
   {% include 'content/F26/MAT4170/HW08/exercises/exit_interview.html' %}
+</details>
+
+<details>
+  <summary>
+    Choice Exercise 10 [≤12]
+    <span style="font-size: small;">(Group of units)</span>
+  </summary>
+  <p>
+    Let \((R, +, \times)\) be a ring. We define the <b>group of units</b> (under \(\times\)) as the set of elements in \(R\) that have a multiplicative inverse in \(R\): \[
+      R^\times = \{ r \in R \mid \exists\, r^{-1} \in R \}.
+    \]
+  </p>
+  <ol>
+    <li>[4]
+      Prove that for every ring \((R, +, \times)\), \(R^\times\) forms a group under \(\times\).
+    </li>
+    <li>[1]
+      Consider the ring \(\mathbb{R}^{2 \times 2}\) of \(2 \times 2\) real valued matrices under matrix addition and matrix multiplication. Describe the group of units in words. (We call this group of units \(GL_2(\mathbb{R})\), the "general linear group.")
+    </li>
+    <li>[1]
+      Describe the group of units for \(\mathbb{Z}\), \(\mathbb{Q}\), \(\mathbb{R}\), and \(\mathbb{C}\).
+    </li>
+    <li>[1]
+      Describe the group of units for \(\mathbb{Z}/7\mathbb{Z}\), \(\mathbb{Z}/8\mathbb{Z}\), and \(\mathbb{Z}/15\mathbb{Z}\).
+      <br>
+      (Hint: you did this on HW 3.)
+    </li>
+    <li>[2]
+      Describe the group of units for the Gaussian integers \[
+        \mathbb{Z}[i] = \{ a + bi \mid a, b \in \mathbb{Z} \}
+      \] and prove that the group of units is isomorphic to the cyclic group \(C_4\).
+    </li>
+    <li>[3]
+      Describe the group of units for the endomorphism ring defined in Choice Exercise 8.
+    </li>
+  </ol>
 </details>
 
 <details>

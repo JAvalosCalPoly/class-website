@@ -4,15 +4,26 @@ type: assignment
 number: 7
 courseNumber: MAT4170
 term: F26
-date: 2026-10-22
+date: 2026-10-23
 layout: layouts/hw.njk
-eleventyExcludeFromCollections: true
 ---
 <br>
 <h2>Goals</h2>
 <ul>
-  <li>Complete your <a href=https://en.wiktionary.org/wiki/penultimate>penultimate</a> homework assignment.</li>
-  <li>[...]</li>
+  <li>Complete your <a href=https://en.wiktionary.org/wiki/penultimate>penultimate</a> homework assignment, and your last homework assignment that is focused on group theory.</li>
+  <li>Practice the first isomorphism theorem with applications</li>
+  <li>
+    Practice your fundamentals
+  </li>
+  <li>
+    See the fundamental theorem of finite abelian groups
+  </li>
+  <li>
+    Check out my 3D model of the Cayley graph of the free group \(F_3\).
+  </li>
+  <li>
+    See the other isomorphism theorems. (Good luck!)
+  </li>
 </ul>
 <!-- <h2>Change log</h2>
 <ul>
@@ -41,19 +52,23 @@ eleventyExcludeFromCollections: true
 <details>
   <summary>
     Exercise 3 [3]
-    <span style="font-size: small;">(Proofs Portfolio - TODO)</span>
+    <span style="font-size: small;">(Proofs portfolio)</span>
   </summary>
   <p>
-    [...]
+    Set a timer for 20+ minutes, and work on your <a href="/F26/MAT4170/proofs_portfolio.html">proofs portfolio</a>. Remember that the goal of this document is to showcase your work from the term that you're proudest of, and to give you a chance to edit prior work to make it even stronger. You might use this time to revise existing work or to include new definitions, examples, propositions, and proofs.
+  </p>
+  <p>
+    When the timer goes off, download, and re-upload the PDF to include in your homework assignment.
   </p>
 </details>
 
 <h2>Required Exercises</h2>
 <details>
   <summary>
-    Exercise 4 [?]
-    <span style="font-size: small;">(First isomorphism theorem?)</span>
+    Exercise 4 [11]
+    <span style="font-size: small;">(First isomorphism theorem)</span>
   </summary>
+  {% include 'content/F26/MAT4170/HW07/exercises/circle_symmetries.html' %}
 </details>
 
 <h2>Choice Exercises</h2>
@@ -63,124 +78,65 @@ eleventyExcludeFromCollections: true
 
 <details>
   <summary>
-    Choice Exercise 6 [≤2]
-    <span style="font-size: small;">(Quiz review - TODO)</span>
-  </summary>
-  {% include 'content/F26/MAT4170/HW06/exercises/quiz_review.html' %}
-</details>
-
-<details>
-  <summary>
-    Choice Exercise 8 [≤8]
+    Choice Exercise 5 [≤23]
     <span style="font-size: small;">(Fundamentals)</span>
   </summary>
-  <ol>
-    <li> <!-- From HW 8.6.1b (S26) -->
-      If \( G \) is a finite group with order \( |G| = p^n \) for some prime \( p \) and \( n \in \mathbb{N}_{\geq 0} \), then all subgroups \( H \) have order \( |H| = p^k \) for some \( k \) and all quotient groups \( G/N \) have order \( |G| = p^m \) for some \( m \).
-    </li>
-  </ol>
+  <i>
+    Don't forget: you can also do exercises from previous assignments and get credit for your work in the final choice exercise.
+  </i>
+  {% include 'content/F26/MAT4170/HW07/exercises/fundamentals.html' %}
 </details>
 
 <details>
   <summary>
-    Choice Exercise 8 [≤8]
-    <span style="font-size: small;">(Fundamental Theorem of Finite Abelian Groups)</span>
+    Choice Exercise 6 [≤12]
+    <span style="font-size: small;">(Classification of finite abelian groups)</span>
   </summary>
   {% include 'content/F26/MAT4170/HW07/exercises/fundamental_theorem_abelian.html' %}
 </details>
 
 <details>
   <summary>
-    Choice Exercise 8 [≤10]
-    <span style="font-size: small;">(Ideas - todo)</span>
+    Choice Exercise 7 [5 + 5 + 10] ⭐️
+    <span style="font-size: small;">(Free group + programming)</span>
+  </summary>
+  {% include 'content/F26/MAT4170/HW07/exercises/free_group.html' %}
+  </div>
+</details>
+
+<details>
+  <summary>
+    Choice Exercise 8 [10 + 10]
+    <span style="font-size: small;">(Other isomorphism theorems)</span>
   </summary>
   <ol>
-    <li>
-      Automorphism <ol>
-        <li>Show conjugating by \(g\) is an (inner) automorphism.</li>
-        <li>See that "being consistent" with what we regard as a flip results in the "same" dihedral groups.</li>
-        <li>Show that automorphisms form a group under function composition.</li>
-      </ol>
+    <li>[10]
+      Prove the <i>second</i> isomorphism theorem states that if \((G,*)\) is a group, $H \leq G$, $N \triangleleft G$, and \[
+        SN = \{s * n \mid s \in S \text{ and } n \in N\},
+      \] then the following quotient groups are isomorphic: \[
+        (SN)/N \cong S/(S \cap N).
+      \]
+      Before proving this, you should check that (a) \(SN \leq G\), (b) \(N \triangleleft SN\), and (c) \((S \cap N) \triangleleft S\).
     </li>
-    <li>
-      Normal closure
-    </li>
-    <li>
-      Commutator subgroup is a normal subgroup (see <a href="https://math.stackexchange.com/questions/141888/how-to-show-that-the-commutator-subgroup-is-a-normal-subgroup/141901#141901">MSE</a>)
-    </li>
-    <li>
-      <a href="https://math.stackexchange.com/questions/242348/intuition-on-group-homomorphisms/242370#242370">Intuition on group homomorphisms</a>
-    </li>
-    <li>
-      Second isomorphism theorem.
-    </li>
-    <li>
-      Third isomorphism theorem.
-    </li>
-    <li>
-      Look at saved exercises in the exercise bank.
-    </li>
-    <li>
-      Applications <a href="https://matheducators.stackexchange.com/questions/269/what-are-some-good-mathematical-applications-to-present-in-an-abstract-algebra-c/311#311"></a>
+    <li>[10]
+      Prove the <i>third</i> isomorphism theorem, which states that if \(N \triangleleft G\) and \(N \leq K \triangleleft G\), then \[
+        (G/N)/(K/N) \cong G/K.
+      \] (You should also prove that \(N \triangleleft K\).)
     </li>
   </ol>
 </details>
 
 <details>
   <summary>
-    Choice Exercise 8 [≤10]
-    <span style="font-size: small;">(TODO - normal subgroups are not transitive)</span>
+    Choice Exercise 9 [≤5]
+    <span style="font-size: small;">(Self-study)</span>
   </summary>
   <p>
-    Prove that the <i>normal subgroup</i> relation \(H \triangleleft G\) is <i>not</i> transitive by doing the following.
+    Set a timer for \(8n\) minutes, where \(n\) is the number of points you are claiming on this problem. Read a textbook, watch a YouTube video, or do something related to get other perspectives on group theory.
   </p>
-  <ol>
-    <li>
-      On Exam 1, you proved that $A_n \triangleft S_n$. Repeat this argument here. (Prove the homework 1 hint!)
-    </li>
-    <li>
-      On HW 5? you proved that conjugation in the symmetric group preserves cycle structure. Show that \(N = \{e, (12)(34), (13)(24), (14)(23)\}\) is a subgroup and is closed under conjugation. (It's closed under conjugation by elements of \(S_n\), so it's definitely closed by conjugation under \(A_n\).) And thus \(N \triangleleft S_4\) and \(H \triangleleft A_4\).
-    </li>
-    <li>
-      Prove that \(H \cong C_2 \times C_2\) by describing an isomorphism, and briefly say why \(H\) is abelian.
-    </li>
-    <li>
-      Quickly recall the proof that <i>all</i> subgroups of an abelian group are normal subgroups, and give an example of a proper non-trivial subgroup of \(H \triangleleft N\).
-    </li>
-    <li>
-      Prove that \(H\) is <i>not</i> a normal subgroup of \(S_4\), and explain why this implies that the normal subgroup relation is not transitive.
-    </li>
-  </ol>
-</details>
-
-<details>
-  <summary>
-    Choice Exercise 9 [?] ⭐️
-    <span style="font-size: small;">(Circle symmetries)</span>
-  </summary>
-  {% include 'content/F26/MAT4170/HW07/exercises/circle_symmetries.html' %}
-</details>
-
-<details>
-  <summary>
-    Choice Exercise 10 [?]
-    <span style="font-size: small;">(TODO - Cosets as parallel lines)</span>
-  </summary>
-  (find problem about cosets as parallel lines)
-</details>
-
-<details>
-  <summary>
-    Choice Exercise 12 [≤7]
-    <span style="font-size: small;">(Programming - TODO)</span>
-  </summary>
-</details>
-
-<details>
-  <summary>
-    Choice Exercise 13 [?]
-    <span style="font-size: small;">(Articles / Video)</span>
-  </summary>
+  <p>
+    Post in the class Discord with a link to what you read/watched, along with an interesting example you came across, an "aha moment" that you had, or anything else that you think your classmates might be interested to know about.
+  </p>
 </details>
 
 <details>

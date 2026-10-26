@@ -1,0 +1,28 @@
+---
+title: Fields
+type: notes
+courseNumber: MAT4170
+term: F26
+date: 2026-10-22
+week: 9
+day: Thursday
+layout: layouts/notes.njk
+---
+<h2>{{title}}</h2>
+<p>
+  If rings are structures with operations that behave like addition, subtraction (additive inverses), and multiplication, then <i>fields</i> also bring division (multiplicative inverses) into the mix. We also require that multiplication is commutative.
+</p>
+<div class="definition">
+  A <b>field</b> is a commutative ring \(F\) with at least two elements such that for every element \(a \in F \setminus \{0_F\}\), \(a\) has a multiplicative inverse denoted \(a^{-1}\).
+</div>
+<div class="example">
+  The most familiar examples of fields are the rational numbers \(\mathbb{Q}\), the real numbers \(\mathbb{R}\), and the complex numbers \(\mathbb{C}\). Recall that in linear algebra, we define a vector space <i>over a field</i>, and so we often deal with real-valued or complex-valued matrices. Many of the results that you've seen in a linear algebra class also work over an arbitrary field \(\mathbb{F}\).
+</div>
+<div class="exercise">
+  <p>
+    Not all fields are infinite! Let \(\mathbb{Z}_n = \mathbb{Z}/n\mathbb{Z}\) denote the integers mod \(n\). Show that \(\mathbb{Z}_2\) and \(\mathbb{Z}_3\) are fields, but \(\mathbb{Z}_4\) is not a field.
+  </p>
+  <p>
+    You can generalize this further: show that for \(n \geq 2\), \(\mathbb{Z}_n\) is a field if and only if \(n\) is prime.
+  </p>
+</div>

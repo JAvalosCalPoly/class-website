@@ -27,9 +27,13 @@ courseTitle: Introduction to Mathematical Typesetting
 <h2>Notes</h2>
 <ul class="link-list">
 {% for post in collections.notes | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
-  <li><a href="{{ post.url }}">
-  {% if post.data.week %}<span class="week">{{ post.data.week }}</span>{% endif %}
-  {{ post.data.title }}
-</a></li>
+  <li>
+    {% if post.data.week is defined %}
+    <div style="font-size: 0.5em;">
+      {{ post.data.week }}
+    </div>
+    {% endif %}
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+  </li>
 {% endfor %}
 </ul>

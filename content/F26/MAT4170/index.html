@@ -8,6 +8,45 @@ courseTitle: Introduction to Abstract Algebra I
 <h1 style="margin:0;">{{ courseNumber }}</h1>
 <h4 style="margin:0;">{{ courseTitle }} ({{ term }})</h4>
 
+<h2>Projects and papers</h2>
+<div class="two-column grid by-columns" style="padding-bottom: 0.5em;">
+  <!-- <a href="/F26/MAT4170/group_video/" class="hw-list-item" style="aspect-ratio: auto; padding-bottom:0.5em;">
+    <div>
+      <div style="font-size: 2em;	line-height: 1.2;">
+        Group project
+      </div>
+      <div>
+         (video)
+      </div>
+      <div>
+        (Tu, 12/01 in class)
+      </div>
+    </div>
+  </a> -->
+  <a href="/F26/MAT4170/group_assignment/" class="hw-list-item" style="aspect-ratio: 3.5; padding-bottom:0.5em;">
+    <div>
+      <div style="font-size: 2em;	line-height: 1.2;">
+        Group project
+      </div>
+      <div>
+         (assignment)
+      </div>
+      <div>
+        (W, 11/18 at 11:59PM)
+      </div>
+    </div>
+  </a>
+  <a href="/F26/MAT4170/proofs_portfolio/" class="hw-list-item" style="aspect-ratio: 3.5; padding-bottom:0.5em;">
+    <div>
+      <div style="font-size: 2em;	line-height: 1.2;">
+        Proofs portfolio
+      </div>
+      <div>
+        (F, 11/13 at 11:59PM)
+      </div>
+    </div>
+  </a>
+</div>
 <h2>Assignments</h2>
 <div class="three-column grid by-columns">
 {% for post in collections.assignments | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
@@ -27,8 +66,13 @@ courseTitle: Introduction to Abstract Algebra I
 <h2>Notes</h2>
 <ul class="link-list">
 {% for post in collections.notes | filterByClass(courseNumber, term) | sortBy("date") | reverse %}
-  <li><a href="{{ post.url }}">
-  {% if post.data.week is defined %}<span class="week">{{ post.data.week }}{{ post.data.day[0] + post.data.day[1] }}</span>{% endif %}
+  <li>
+    {% if post.data.week is defined %}
+    <div style="font-size: 0.5em;">
+      {{ post.data.week }}{{ post.data.day[0] + post.data.day[1] }}
+    </div>
+    {% endif %}
+    <a href="{{ post.url }}">
   {{ post.data.title }}
 </a></li>
 {% endfor %}
@@ -37,7 +81,6 @@ courseTitle: Introduction to Abstract Algebra I
 
 <h3 style="margin-bottom:0;">Other pages</h3>
 <ul style="margin-top:0;">
-  <li><a href="/F26/MAT4170/proofs_portfolio/">Proofs portfolio instructions</a></li>
   <li><a href="/LaTeX_tips/">\( \LaTeX \) tips</a></li>
 </ul>
 </div>
